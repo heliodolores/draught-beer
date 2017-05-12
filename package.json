@@ -1,0 +1,15 @@
+{
+  "name": "draught-beer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Hélio Dolores",
+  "license": "MIT",
+  "repository": "https://github.com/heliodolores/draught-beer",
+  "dependencies": {
+    "open": "0.0.5",
+    "os": "^0.1.1",
+    "qrcode-generator": "^1.1.0",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2"
+  }
+}

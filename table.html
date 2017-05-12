@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="node_modules/qrcode-generator/qrcode.js"></script>
+        <script type="text/javascript" src="js/table.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/table.css">
+        <title>Magic Tricks Example</title>
+    </head>
+    <body>
+        <!-- Pointer to indicate phone direction-->
+        <div id="phone-move" class="path"></div>
+        <!-- Waiting for phone to connect banner -->
+        <div id="waiting-for-device">
+            <div class="section">
+                <span>Scan with phone or go to:</span>
+                <span id="url"></span>
+            </div>
+            <div id="placeholder"></div>
+            <div class="section">
+                <span>Waiting phone to connect ...</span>
+            </div>
+        </div>
+
+        <div id="beer-tap-container">
+            <div id="beer-tap-top"></div>
+            <div id="beer-tap-top-shadow"></div>
+            <div id="beer-tap-bottom"></div>
+            <div id="beer-pouring-liquid"></div>
+        </div>
+    </body>
+</html>
