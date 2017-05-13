@@ -17,7 +17,7 @@ $ npm start
 
 Note: 
 This project uses code from 2 awesome projects:
-Tim Ruby - [CSS Animated Beer Pour (Forked from CSS Beaker Pen)](https://codepen.io/TimRuby/pen/jcLia)
+Tim Ruby - [CSS Animated Beer Pour (Forked from CSS Beaker Pen)](https://codepen.io/TimRuby/pen/jcLia) 
 Giorgi (Goga) Chinchaladze - [Beer Pouring !](https://codepen.io/gogachinchaladze/pen/NqajLv) 
 
 License
