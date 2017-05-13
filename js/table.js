@@ -1,3 +1,8 @@
+/*
+This project uses code from this example:
+Giorgi (Goga) Chinchaladze - "Beer Pouring !" - https://codepen.io/gogachinchaladze/pen/NqajLv
+*/
+
 var serverURL = window.location.host;
 var tableId = generateID();
 var isPouring = false;
@@ -22,8 +27,59 @@ document.addEventListener( 'DOMContentLoaded', function () {
     // and the URL
     document.getElementById("url").innerHTML = "http://" + serverURL + "/?id=" + tableId;
 
+    initBeerPouring();
 
-    /////////////////////////////////////////////
+}, false);
+
+
+
+
+// CALLBACK FUNCTIONS
+
+function phoneConnected() {
+    // remove banner when a phone connects
+    document.getElementById("waiting-for-device").remove();
+}
+
+function beerStart() {
+    isPouring = true;
+}
+
+function beerEnd() {
+    isPouring = false;
+}
+
+
+// HELPERS
+
+function qrCodeGenerator(value, elementid) {
+    // generates a qrcode based on a value inside an html element
+    var qr = qrcode(4, 'L');
+    qr.addData(value);
+    qr.make();
+    document.getElementById(elementid).innerHTML = qr.createImgTag(4,16);
+}
+
+function generateID(){
+    // generate random 5 character id for the session
+    var d = new Date().getTime();
+    if(window.performance && typeof window.performance.now === "function"){
+        d += performance.now();
+    }
+    var uuid = 'xxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
+
+
+/******************************************************************
+ slightly modified code from: https://codepen.io/gogachinchaladze/pen/NqajLv
+*******************************************************************/
+
+function initBeerPouring() {
 
     function hasClass(element, cls) {
         return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
@@ -74,47 +130,4 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
     render();
 
-}, false);
-
-
-// CALLBACK FUNCTIONS
-
-function phoneConnected() {
-    // remove banner when a phone connects
-    document.getElementById("waiting-for-device").remove();
 }
-
-function beerStart() {
-    isPouring = true;
-}
-
-function beerEnd() {
-    isPouring = false;
-}
-
-
-// HELPERS
-
-function qrCodeGenerator(value, elementid) {
-    // generates a qrcode based on a value inside an html element
-    var qr = qrcode(4, 'L');
-    qr.addData(value);
-    qr.make();
-    document.getElementById(elementid).innerHTML = qr.createImgTag(4,16);
-}
-
-function generateID(){
-    // generate random 5 character id for the session
-    var d = new Date().getTime();
-    if(window.performance && typeof window.performance.now === "function"){
-        d += performance.now();
-    }
-    var uuid = 'xxxxx'.replace(/[xy]/g, function(c) {
-        var r = (d + Math.random()*16)%16 | 0;
-        d = Math.floor(d/16);
-        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-    });
-    return uuid;
-}
-
-
