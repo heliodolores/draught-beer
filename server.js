@@ -59,9 +59,9 @@ var tableSockets = {};
 
 realtimeListener.on('connection', function (socket) {
 
-    // receives a connect message from the card table
+    // receives a connect message from the table
     socket.on("table-connect", function (tableId) {
-        // ...  and stores the card table socket
+        // ...  and stores the table socket
         tableSockets[tableId] = socket;
         socket.tableId = tableId;
     });

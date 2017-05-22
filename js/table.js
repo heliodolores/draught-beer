@@ -13,7 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
     // connect to websocket server
     var socket = io.connect(serverURL);
 
-    // register card table socket
+    // register table socket
     socket.emit('table-connect', tableId);
 
     // listen to phone connections
