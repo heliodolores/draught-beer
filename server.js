@@ -6,10 +6,10 @@ var IO = require('socket.io');
 var OPEN = require('open');
 var OS = require('os');
 
-// Create a simple web server for both pages (deck and table)
+// Create a simple web server for both pages (cup and table)
 var server = HTTP.createServer(function (request, response) {
 
-    // Serve different pages for Phone (deck) and Desktop/Tablet (table)
+    // Serve different pages for Phone (cup) and Desktop/Tablet (table)
     var filePath = '.' + request.url;
 
     if (request.url === '/' || request.url.startsWith('/?')) {
